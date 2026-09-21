@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { SOCIAL_LINKS } from '@/config/site';
 
 interface HeaderProps {
   onOpenEnquiry: () => void;
@@ -50,7 +51,7 @@ export default function Header({ onOpenEnquiry }: HeaderProps) {
         <div className="container header-top-wrap">
           <div className="header-contact-list">
             <span className="header-contact-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
-              <FaPhoneAlt size={12} /> 9049344991 / 8976178976
+              <FaPhoneAlt size={12} /> <strong style={{ fontSize: 12 }}>Kalyan HO:</strong> 9049344991 / 8976178976
             </span>
             <span className="header-contact-item" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
               <FaPhoneAlt size={12} /> 7770048032 (Dombivli)
@@ -58,10 +59,10 @@ export default function Header({ onOpenEnquiry }: HeaderProps) {
           </div>
           <div className="header-top-right">
             <div className="header-socials" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <a href="https://www.facebook.com/caddeskindia/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaFacebookF size={14} /></a>
-              <a href="https://www.instagram.com/caddeskindia" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaInstagram size={14} /></a>
-              <a href="https://www.linkedin.com/in/caddeskindia" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaLinkedinIn size={14} /></a>
-              <a href="https://www.youtube.com/@mtechcomputers" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaYoutube size={14} /></a>
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaFacebookF size={14} /></a>
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaInstagram size={14} /></a>
+              <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaLinkedinIn size={14} /></a>
+              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}><FaYoutube size={14} /></a>
             </div>
           </div>
         </div>
@@ -192,6 +193,10 @@ export default function Header({ onOpenEnquiry }: HeaderProps) {
                   <Link href="/privacy-policy" className="dropdown-link" onClick={closeMobileMenu}>Privacy Policy</Link>
                 </li>
               </ul>
+            </li>
+
+            <li className="nav-item">
+              <Link href="/placed-students" className="nav-link" onClick={closeMobileMenu}>Placements</Link>
             </li>
 
             <li className="nav-item">
